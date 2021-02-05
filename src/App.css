@@ -8,28 +8,50 @@
 }
 
 #button-grid {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: 1fr 1fr 1fr;
+  box-sizing: border-box;
   width: 30vw;
-  height: 100px;
+  height: 40vh;
   border: 1px solid grey;
   background-color: rgb(173, 173, 231);
+  position: absolute;
+  top: 10vh;
+  right: 5vw;
 }
 
 .fl-button {
   border: 1px solid grey;
   background-color: rgb(173, 173, 231);
-  width: 30%;
+  width: 100%;
 }
 
 .fl-button:hover {
   cursor: pointer;
 }
 
-input {
-  width: 25px;
+
+#elevator {
+  background-color: rgb(144, 167, 168);
+  box-sizing: border-box;
+  padding: 2%;
+  display: inline-grid;
+  width: 30vw;
+  height: 40vh;
+  border: 1px solid grey;
+  position: absolute;
+  top: 10vh;
+  left: 5vw;
 }
 
+.floor {
+  background-color: rgb(96, 113, 128);
+  border: 1px solid grey;
+  border-radius: 5px;
+  font-family: cursive;
+  margin: auto;
+  padding: 4%;
+}
 
 .navigate {
   height: 10vh;
@@ -43,6 +65,7 @@ input {
   justify-content: center;
   margin: 0px;
   width: 25vw;
+  height: 10vh;
   align-items: center;
   text-decoration: none;
   color: #000;
@@ -54,6 +77,11 @@ input {
   border: 1px solid grey;
   border-bottom: none;
 }
+
+input {
+  width: 25px;
+}
+
 
 a {
   text-decoration: none;
@@ -67,4 +95,21 @@ a.hover {
 a.visited {
   text-decoration: none;
   color: black;
+}
+
+
+#true {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1
+  }
+  50% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
 }

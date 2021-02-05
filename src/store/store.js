@@ -5,10 +5,12 @@ const initialState = {
     current: {
         moving: false,
         floor: 1,
-        dest: null,
+        dest: 1,
         people: 0,
         time: 0,
     },
+    arrow: " ",
+    counter: 1,
     logs: []
 }
 const store = createStore(reducer, initialState)

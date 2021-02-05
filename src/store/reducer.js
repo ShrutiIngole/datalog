@@ -2,6 +2,7 @@ const reducer = (state, action) => {
     var today = new Date();
     switch (action.type) {
         case "SET_FLOOR": {
+            console.log("Current var: ", state.current)
             return {
                 ...state,
                 current: {
@@ -20,6 +21,7 @@ const reducer = (state, action) => {
                 }
             }
         }
+
         case "START": {
             console.log(today)
             return {
@@ -34,22 +36,48 @@ const reducer = (state, action) => {
         }
 
         case "END": {
+            console.log(state.arrow)
             console.log("Ended")
             return {
                 ...state,
                 current: {
                     ...state.current,
                     moving: false,
-                    people: 0,
                     floor: state.current.dest,
+                    dest: ""
                 },
+                counter: state.current.dest,
                 logs: [...state.logs,
                     {
                         time: state.current.time,
                         end: state.current.dest,
                         people: state.current.people
                     }
-                ]
+                ],
+                arrow: " "
+            }
+        }
+
+        case "COUNTER": {
+            return {
+                ...state,
+                counter: action.val
+            }
+        }
+
+        case "ARROW_DOWN": {
+            console.log(state.arrow)
+            return{
+                ...state,
+                arrow: "fas fa-angle-double-down"
+            }
+        }
+
+        case "ARROW_UP": {
+            console.log(state.arrow)
+            return{
+                ...state,
+                arrow: "fas fa-angle-double-up"
             }
         }
 

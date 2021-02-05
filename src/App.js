@@ -9,8 +9,8 @@ function App() {
     <div className="App">
     <BrowserRouter>
       <div className="navigate">
-          <span className="navi-el"><Link to="controls">Elevator</Link></span>
-          <span className="navi-el"><Link to="logs">Logs</Link></span>
+        <Link to="controls"><span className="navi-el">Elevator</span></Link>
+        <Link to="logs"> <span className="navi-el">Logs</span></Link>
       </div>
       <Switch>
           <Route exact path="/" component={Controls} />
